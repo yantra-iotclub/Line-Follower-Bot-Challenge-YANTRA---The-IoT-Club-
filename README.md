@@ -69,21 +69,21 @@ This document provides detailed information about the components used in the **L
  │   ├── event_photos/  # Folder with event photos
  ├── 📁 Submissions     # Codes from Participants
  │   ├── Team1/         # Submission from Team 1
- │   │   ├── line_follower.ino
+ │   │   ├── line_follower1.ino
  │   ├── Team2/         # Submission from Team 2
- │   │   ├── optimized_bot.ino
+ │   │   ├── line_follower2.ino
  │   ├── Team3/         # Submission from Team 3
- │   │   ├── line_follower.ino
+ │   │   ├── line_follower3.ino
  │   ├── Team4/         # Submission from Team 4
- │   │   ├── speed_optimized_bot.ino
+ │   │   ├── line_follower4.ino
  │   ├── Team5/         # Submission from Team 5
- │   │   ├── line_follower_v2.ino
+ │   │   ├── line_follower5.ino
  │   ├── Team6/         # Submission from Team 6
- │   │   ├── stable_bot.ino
+ │   │   ├── line_follower6.ino
  │   ├── Team7/         # Submission from Team 7
- │   │   ├── efficient_bot.ino
+ │   │   ├── line_follower7.ino
  │   ├── Team8/         # Submission from Team 8
- │   │   ├── final_version.ino
+ │   │   ├── line_follower8.ino
  ├── 📁 Docs            # Additional Documentation
  │   ├── setup_guide.md # Guide on assembling and coding
  │   ├── troubleshooting.md # Common issues & solutions
