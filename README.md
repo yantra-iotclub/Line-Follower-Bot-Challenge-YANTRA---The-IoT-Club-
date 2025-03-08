@@ -53,6 +53,31 @@ This document provides detailed information about the components used in the **L
   - Ensure proper polarity when connecting to the motor driver.
 
 ---
+## 📂 Repository Structure
+```
+📁 Line-Follower-Bot
+ ├── 📄 README.md       # Project Documentation
+ ├── 📁 Code            # Arduino C++ Code for Line Following
+ │   ├── main.ino       # Main Arduino code file
+ │   ├── sensor_config.ino # Sensor calibration code
+ │   ├── motor_control.ino # Motor control logic
+ ├── 📁 Hardware        # Circuit Diagrams & Hardware Setup
+ │   ├── circuit_diagram.png  # Wiring Diagram
+ │   ├── components_list.txt  # List of required components
+ ├── 📁 Media           # Images & Videos of the Project
+ │   ├── bot_demo.mp4   # Video of bot in action
+ │   ├── event_photos/  # Folder with event photos
+ ├── 📁 Submissions     # Codes from Participants
+ │   ├── Team1/         # Submission from Team 1
+ │   │   ├── line_follower.ino
+ │   ├── Team2/         # Submission from Team 2
+ │   │   ├── optimized_bot.ino
+ ├── 📁 Docs            # Additional Documentation
+ │   ├── setup_guide.md # Guide on assembling and coding
+ │   ├── troubleshooting.md # Common issues & solutions
+```
+
+---
 
 ### 5️⃣ **Programming Language: C++**
 - The bot's logic is programmed using **C++ in Arduino IDE**.
