@@ -1,27 +1,30 @@
 // main.ino - Line Follower Bot Challenge | YANTRA - The IoT Club
-// This file contains the main logic for the line follower bot.
+// Main control logic for the line follower bot
 
 #include "sensor_config.ino"
 #include "motor_control.ino"
 
+#define IR_SENSOR_RIGHT 11
+#define IR_SENSOR_LEFT 12
+#define MOTOR_SPEED 50
+
 void setup() {
-    Serial.begin(9600);
     configureSensors();
-    setupMotors();
+    configureMotors();
+    stopMotors();
 }
 
 void loop() {
-    int leftSensor = digitalRead(leftSensorPin);
-    int rightSensor = digitalRead(rightSensorPin);
-    
-    if (leftSensor == LOW && rightSensor == LOW) {
-        moveForward();
-    } else if (leftSensor == HIGH && rightSensor == LOW) {
-        turnLeft();
-    } else if (leftSensor == LOW && rightSensor == HIGH) {
-        turnRight();
+    int rightIRSensorValue = digitalRead(IR_SENSOR_RIGHT);
+    int leftIRSensorValue = digitalRead(IR_SENSOR_LEFT);
+
+    if (rightIRSensorValue == LOW && leftIRSensorValue == LOW) {
+        rotateMotors(MOTOR_SPEED, MOTOR_SPEED); // Move forward
+    } else if (rightIRSensorValue == HIGH && leftIRSensorValue == LOW) {
+        rotateMotors(-MOTOR_SPEED, MOTOR_SPEED); // Turn right
+    } else if (rightIRSensorValue == LOW && leftIRSensorValue == HIGH) {
+        rotateMotors(MOTOR_SPEED, -MOTOR_SPEED); // Turn left
     } else {
-        stopMotors();
+        stopMotors(); // Stop when both sensors detect black
     }
 }
-
