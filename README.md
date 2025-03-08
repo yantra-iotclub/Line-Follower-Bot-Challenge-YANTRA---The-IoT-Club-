@@ -72,9 +72,22 @@ This document provides detailed information about the components used in the **L
  │   │   ├── line_follower.ino
  │   ├── Team2/         # Submission from Team 2
  │   │   ├── optimized_bot.ino
+ │   ├── Team3/         # Submission from Team 3
+ │   │   ├── line_follower.ino
+ │   ├── Team4/         # Submission from Team 4
+ │   │   ├── speed_optimized_bot.ino
+ │   ├── Team5/         # Submission from Team 5
+ │   │   ├── line_follower_v2.ino
+ │   ├── Team6/         # Submission from Team 6
+ │   │   ├── stable_bot.ino
+ │   ├── Team7/         # Submission from Team 7
+ │   │   ├── efficient_bot.ino
+ │   ├── Team8/         # Submission from Team 8
+ │   │   ├── final_version.ino
  ├── 📁 Docs            # Additional Documentation
  │   ├── setup_guide.md # Guide on assembling and coding
  │   ├── troubleshooting.md # Common issues & solutions
+
 ```
 
 ---
