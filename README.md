@@ -1,83 +1,110 @@
-# 🤖 Line Follower Bot Challenge
-### Organized by **YANTRA - The IoT Club**
+# 🔩 Components Guide for Line Follower Bot
 
-🚀 Welcome to the **Line Follower Bot Challenge** repository! This event, hosted by **YANTRA - The IoT Club**, focuses on designing, developing, and coding autonomous robots that follow a predefined path using sensor-based navigation.
-
----
-
-## 📌 About the Challenge
-The **Line Follower Bot** is an autonomous robot that detects and follows a line drawn on the surface. The challenge encourages participants to:
-- Develop **efficient algorithms** for line following.
-- Utilize **sensors** such as IR, ultrasonic, or camera-based vision.
-- Implement **real-time obstacle handling**.
-- Optimize **speed and stability**.
+This document provides detailed information about the components used in the **Line Follower Bot Challenge** organized by **YANTRA - The IoT Club**.
 
 ---
 
-## 🔥 Features of this Repository
-- 📜 **Source Code** for line-following algorithms.
-- 🔧 **Circuit Diagrams** and hardware setup details.
-- 📷 **Images & Videos** of bots in action.
-- 📚 **Documentation** on sensor calibration and logic implementation.
-- 🏆 **Top Submissions** from the challenge.
+## 📌 Components List
+
+### 1️⃣ **Microcontroller: Arduino Nano**
+- A compact, versatile microcontroller board based on the **ATmega328P**.
+- Features:
+  - 14 digital I/O pins (6 PWM outputs)
+  - 8 analog inputs
+  - Clock speed: 16 MHz
+  - USB Type-B interface for programming
+- **Why Arduino Nano?**
+  - Small size makes it ideal for compact robots.
+  - Easy programming via the **Arduino IDE**.
 
 ---
 
-## 📂 Repository Structure
+### 2️⃣ **Sensors: IR Sensors**
+- **Purpose:** Detect the black line on a contrasting surface.
+- **Working Principle:**
+  - The **IR transmitter** emits infrared light.
+  - The **IR receiver** detects reflected light from the surface.
+  - A **low reflection (black surface)** results in a low signal, while a **high reflection (white surface)** results in a high signal.
+- **Usage in the Bot:**
+  - Place **two or more IR sensors** to detect left, right, or center deviations.
+  - Adjust sensor sensitivity to optimize line detection.
+
+---
+
+### 3️⃣ **Motors: DC Motors with L298N Motor Driver**
+- **DC Motors** provide movement to the bot.
+- **L298N Motor Driver:**
+  - Controls motor speed and direction using **PWM signals**.
+  - Can handle **two DC motors simultaneously**.
+  - Supports a voltage range of **5V–35V**.
+- **Why L298N?**
+  - Enables independent control of **left and right motors**.
+  - Protects the Arduino from high power surges.
+
+---
+
+### 4️⃣ **Power Supply: Battery Packs**
+- **Recommended:** 7.4V - 12V **Li-ion / LiPo Battery**.
+- **Why Li-ion/LiPo?**
+  - Provides high current for motor operation.
+  - Lightweight and rechargeable.
+- **Precautions:**
+  - Use a **voltage regulator** to avoid overloading components.
+  - Ensure proper polarity when connecting to the motor driver.
+
+---
+
+### 5️⃣ **Programming Language: C++**
+- The bot's logic is programmed using **C++ in Arduino IDE**.
+- Key programming concepts:
+  - **Reading IR sensor values** using `digitalRead()`.
+  - **Controlling motor speed** using `analogWrite(PWM_PIN, SPEED_VALUE)`.
+  - **Implementing logic** to adjust the bot’s movement based on sensor input.
+- **Example Code Snippet:**
+```cpp
+#define LEFT_SENSOR 2
+#define RIGHT_SENSOR 3
+#define LEFT_MOTOR 5
+#define RIGHT_MOTOR 6
+
+void setup() {
+  pinMode(LEFT_SENSOR, INPUT);
+  pinMode(RIGHT_SENSOR, INPUT);
+  pinMode(LEFT_MOTOR, OUTPUT);
+  pinMode(RIGHT_MOTOR, OUTPUT);
+}
+
+void loop() {
+  int left = digitalRead(LEFT_SENSOR);
+  int right = digitalRead(RIGHT_SENSOR);
+  
+  if (left == LOW && right == HIGH) {
+    analogWrite(LEFT_MOTOR, 100);
+    analogWrite(RIGHT_MOTOR, 200);
+  } else if (left == HIGH && right == LOW) {
+    analogWrite(LEFT_MOTOR, 200);
+    analogWrite(RIGHT_MOTOR, 100);
+  } else {
+    analogWrite(LEFT_MOTOR, 150);
+    analogWrite(RIGHT_MOTOR, 150);
+  }
+}
 ```
-📁 Line-Follower-Bot
- ├── 📄 README.md  # Project Documentation
- ├── 📁 Code       # Arduino/Python/Raspberry Pi Codes
- ├── 📁 Hardware   # Circuit Diagrams & Hardware Requirements
- ├── 📁 Media      # Images & Videos of the Project
- ├── 📁 Submissions # Codes from Participants
-```
 
 ---
 
-## 🛠️ Tech Stack & Components Used
-- **Microcontrollers**: Arduino Uno / Raspberry Pi
-- **Sensors**: IR Sensors, Ultrasonic Sensors
-- **Motors**: DC Motors with Motor Driver (L298N)
-- **Power Supply**: Battery Packs
-- **Programming Languages**: C++, Python
-
----
-
-## 🚀 Getting Started
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/yantra-iotclub/Line-Follower-Bot-Challenge-YANTRA---The-IoT-Club
-```
-### 2️⃣ Setup the Hardware
-Follow the **circuit diagram** in the `Hardware` folder to connect components correctly.
-
-### 3️⃣ Upload the Code
-- If using **Arduino**, open the `.ino` file in Arduino IDE and upload it.
-- If using **Raspberry Pi**, run the Python script:
-```bash
-python line_follower.py
-```
-
----
-
-## 📢 Contribution Guidelines
-We welcome contributions from participants! Feel free to:
-- Submit improved **code implementations**.
-- Share **better line-following algorithms**.
-- Add **documentation** or improve the existing setup.
-
----
-
-## 📷 Event Highlights
-Check out our **event photos & videos** in the `Media` folder! 🎥
+## 📢 Additional Notes
+- Ensure **proper wiring** between components to avoid short circuits.
+- **Calibrate IR sensors** before running the bot.
+- Use **heat sinks** on the **L298N driver** to prevent overheating.
+- **Optimize C++ code** for smooth bot movement.
 
 ---
 
 ## 📫 Contact Us
 📍 **Organized by:** YANTRA - The IoT Club, Reva University  
-📧 Email: [yantratheiotclub@gmail.com]
-🌐 **GitHub**: [github.com/Yantra-IoT](https://github.com/Yantra-IoT)  
+📧 Email: [yantratheiotclub@gmail.com](mailto:yantratheiotclub@gmail.com)  
+🌐 **GitHub**: [github.com/yantra-iotclub](https://github.com/yantra-iotclub)  
 
 ---
 
