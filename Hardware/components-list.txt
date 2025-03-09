@@ -1,0 +1,36 @@
+Line Follower Bot Challenge - Components List
+Organized by: YANTRA - The IoT Club
+---------------------------------------------------
+
+1. Microcontroller:
+   - Arduino Nano (1x)
+
+2. Sensors:
+   - Infrared (IR) Sensors (2x)
+
+3. Motors:
+   - DC Motors (TT Gear Motors) (2x)
+   - Motor Driver Module - L298N (1x)
+
+4. Power Supply:
+   - Battery Pack (2x 18650 or 9V battery pack with connector)
+   - Jumper Wires (Male-to-Male, Male-to-Female)
+
+5. Chassis & Mounting:
+   - 2-Wheel Robot Chassis Kit
+   - Castor Wheel (1x)
+   - Screws, Nuts & Mounts
+
+6. Wheels:
+   - Compatible rubber wheels for DC motors (2x)
+
+7. Miscellaneous:
+   - Breadboard or PCB (Optional for connections)
+   - On/Off switch (1x)
+   - USB Cable for Arduino Nano
+   - Soldering Kit or Male Header Pins (Optional)
+
+---------------------------------------------------
+Total Teams: 8
+GitHub Repo: https://github.com/yantra-iotclub/line-follower-bot-yantra
+Contact: yantratheiotclub@gmail.com
